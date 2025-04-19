@@ -1,8 +1,9 @@
-# GSMArena API (gsmarena.com)
 
-GSMArena phone specification and finder. This project is still in early development.
+# gsm API (gsm.com)
 
-The API basically reads from GSMArena website and results JSON data.
+gsm phone specification and finder. This project is still in early development.
+
+The API basically reads from the GSM website and returns JSON data.
 
 ## Table of Contents
 
@@ -29,21 +30,21 @@ The API basically reads from GSMArena website and results JSON data.
 ## Installation
 
 ```bash
-npm i gsmarena-api
+npm i gsm-nameless
 ```
 
 ## Usage
 
 ### Import
 
-```js
-const gsmarena = require('gsmarena-api');
+```ts
+import * as gsm from 'gsm-nameless';
 ```
 
 ### Brand list
 
-```js
-const brands = await gsmarena.catalog.getBrands();
+```ts
+const brands = await gsm.catalog.getBrands();
 console.log(brands);
 ```
 
@@ -59,8 +60,8 @@ console.log(brands);
 
 ### Device list by brand
 
-```js
-const devices = await gsmarena.catalog.getBrand('apple-phones-48');
+```ts
+const devices = await gsm.catalog.getBrand('apple-phones-48');
 console.log(devices);
 ```
 
@@ -69,7 +70,7 @@ console.log(devices);
   {
     "id": "apple_iphone_13_pro_max-11089",
     "name": "iPhone 13 Pro Max",
-    "img": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-pro-max.jpg",
+    "img": "https://fdn2.gsm.com/vv/bigpic/apple-iphone-13-pro-max.jpg",
     "description": "Apple iPhone 13 Pro Max smartphone. Announced Sep 2021..."
   }
 ]
@@ -77,15 +78,15 @@ console.log(devices);
 
 ### Device detail
 
-```js
-const device = await gsmarena.catalog.getDevice('apple_iphone_13_pro_max-11089');
+```ts
+const device = await gsm.catalog.getDevice('apple_iphone_13_pro_max-11089');
 console.log(device);
 ```
 
 ```json
 {
   "name": "Apple iPhone 13 Pro Max",
-  "img": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-pro-max.jpg",
+  "img": "https://fdn2.gsm.com/vv/bigpic/apple-iphone-13-pro-max.jpg",
   "quickSpec": [
     {
       "name": "Display size",
@@ -108,8 +109,8 @@ console.log(device);
 
 ### Searching for device
 
-```js
-const devices = await gsmarena.search.search('casio');
+```ts
+const devices = await gsm.search.search('casio');
 console.log(devices);
 ```
 
@@ -118,7 +119,7 @@ console.log(devices);
   {
     "id": "casio_g_zone_ca_201l-5384",
     "name": "Casio G'zOne CA-201L",
-    "img": "https://fdn2.gsmarena.com/vv/bigpic/casio-gzone-ca-201l.jpg",
+    "img": "https://fdn2.gsm.com/vv/bigpic/casio-gzone-ca-201l.jpg",
     "description": "Casio G'zOne CA-201L Android smartphone. Announced Mar 2013..."
   }
 ]
@@ -126,8 +127,8 @@ console.log(devices);
 
 ### Top
 
-```js
-const top = await gsmarena.top.get();
+```ts
+const top = await gsm.top.get();
 console.log(top);
 ```
 
@@ -149,8 +150,8 @@ console.log(top);
 
 ### Deals
 
-```js
-const deals = await gsmarena.deals.getDeals();
+```ts
+const deals = await gsm.deals.getDeals();
 console.log(deals);
 ```
 
@@ -164,7 +165,7 @@ console.log(deals);
     "description": "OnePlus 9 5G (UK) SIM-Free Smartphone with Hasselblad Camera for Mobile - Arctic Sky...",
     "deal": {
       "memory": "128GB 8GB RAM",
-      "storeImg": "https://fdn.gsmarena.com/imgroot/static/stores/amazon-uk1.png",
+      "storeImg": "https://fdn.gsm.com/imgroot/static/stores/amazon-uk1.png",
       "price": 449.00,
       "currency": "£",
       "discount": 24.6
@@ -182,8 +183,8 @@ console.log(deals);
 
 ### Glossary
 
-```js
-const glossary = await gsmarena.glossary.get();
+```ts
+const glossary = await gsm.glossary.get();
 console.log(glossary);
 ```
 
@@ -203,8 +204,8 @@ console.log(glossary);
 
 ### Glossary detail
 
-```js
-const term = await gsmarena.glossary.getTerm('xenon-flash');
+```ts
+const term = await gsm.glossary.getTerm('xenon-flash');
 console.log(term);
 ```
 
@@ -221,4 +222,5 @@ Created by [@nordmarin](https://t.me/nordmarin) - feel free to contact me!
 
 ## License
 
-GSMArena API is MIT licensed.
+gsm API is MIT licensed.
+
